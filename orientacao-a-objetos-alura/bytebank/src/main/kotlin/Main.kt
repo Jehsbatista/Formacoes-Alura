@@ -1,6 +1,5 @@
 fun main() {
     println("Hello World!")
-    println("Hello World!")
     println("Bem vindo ao Bytebank")
     val titular: String = "Alex"
     val numeroConta: Int = 1000
@@ -12,6 +11,10 @@ fun main() {
     println("número da conta $numeroConta")
     println("saldo da conta $saldo")
 
+    testacondicoes(saldo)
+}
+
+fun testacondicoes(saldo: Double) {
     when {
         saldo > 0.0 -> {
             println("conta positiva")
@@ -25,5 +28,4 @@ fun main() {
             println("conta negativa")
         }
     }
-
 }
