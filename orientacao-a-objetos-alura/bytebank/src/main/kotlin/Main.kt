@@ -1,8 +1,13 @@
 fun main() {
+    println("Bem vindo ao Bytebank")
+
+    //testaLacos()
+    //testacondicoes(saldo)
+}
+
+fun testaLacos() {
     var i = 0
     while (i < 6) {
-        println("Hello World!")
-        println("Bem vindo ao Bytebank")
         val titular: String = "Alex $i"
         val numeroConta: Int = 1000 + i
         var saldo = i + 10
@@ -13,7 +18,6 @@ fun main() {
         println()
         i++
     }
-    //testacondicoes(saldo)
 }
 
 fun testacondicoes(saldo: Double) {
