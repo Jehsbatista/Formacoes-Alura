@@ -1,17 +1,19 @@
 fun main() {
-    println("Hello World!")
-    println("Bem vindo ao Bytebank")
-    val titular: String = "Alex"
-    val numeroConta: Int = 1000
-    var saldo = 0.0
-    saldo = 100 + 2.0
-    saldo += 200
 
-    println("titular $titular")
-    println("número da conta $numeroConta")
-    println("saldo da conta $saldo")
+    for (i in 1..5) {
+        println("Hello World!")
+        println("Bem vindo ao Bytebank")
+        val titular: String = "Alex $i"
+        val numeroConta: Int = 1000 + i
+        var saldo = i + 10
 
-    testacondicoes(saldo)
+        println("titular $titular")
+        println("número da conta $numeroConta")
+        println("saldo da conta $saldo")
+        println()
+    }
+
+    //testacondicoes(saldo)
 }
 
 fun testacondicoes(saldo: Double) {
