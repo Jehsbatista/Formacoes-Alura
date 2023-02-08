@@ -1,6 +1,6 @@
 fun main() {
-
-    for (i in 1..5) {
+    var i = 0
+    while (i < 6) {
         println("Hello World!")
         println("Bem vindo ao Bytebank")
         val titular: String = "Alex $i"
@@ -11,8 +11,8 @@ fun main() {
         println("número da conta $numeroConta")
         println("saldo da conta $saldo")
         println()
+        i++
     }
-
     //testacondicoes(saldo)
 }
 
