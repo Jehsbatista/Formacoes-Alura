@@ -25,24 +25,33 @@ fun main() {
 
     //criando novos objetos, uma cópia
 
-    val contaJoao1 = Conta()
-    contaJoao1.titular = "João"
-    var contaMaria1 = Conta()
-    contaMaria1.titular = "Maria"
-
-    //desta forma esta pegando a referência do objeto contajoao
-
-    val contaJoao2 = Conta()
-    contaJoao2.titular = "João"
-    val contaMaria2 = contaJoao1
-    contaMaria2.titular = "Maria"
-
 }
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+}
+
+fun testaCopiaEReferencia() {
+    val numeroX = 10
+    var numeroY = numeroX
+    numeroY++
+
+    println("numeroX $numeroX")
+    println("numeroY $numeroY")
+
+    val contaJoao = Conta()
+    contaJoao.titular = "João"
+    var contaMaria = Conta()
+    contaMaria.titular = "Maria"
+    contaJoao.titular = "João"
+
+    println("titular conta joao: ${contaJoao.titular}")
+    println("titular conta maria: ${contaMaria.titular}")
+
+    println(contaJoao)
+    println(contaMaria)
 }
 
 fun testaLacos() {
