@@ -1,10 +1,10 @@
 fun main() {
     println("Bem vindo ao Bytebank")
 
-    val contaAlex = Conta("Alex", 1000)
+    val contaAlex = Conta(titular = "Alex", numero = 1001)
     contaAlex.deposita(200.0)
 
-    val contaFran = Conta("Fran", 1001)
+    val contaFran = Conta(titular = "Fran", 1002)
     contaFran.deposita(300.0)
 
     println(contaAlex.titular)
@@ -39,7 +39,7 @@ fun main() {
 
     println("Transferência da conta da Fran para o Alex")
 
-    if (contaFran.transfere(30.0, contaAlex)) {
+    if (contaFran.transfere(valor = 30.0, destino = contaAlex)) {
         println("transação sucedida")
     } else {
         println("falha na transferência")
