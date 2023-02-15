@@ -22,9 +22,21 @@ fun main() {
     println("salário: ${fran.salario}")
     println("Bonificação ${fran.bonificacao()}")
 
-    if (fran.autentica(123)){
+    val guilherme = Diretor(
+        nome = "guilherme",
+        cpf = "333.333.333-33",
+        salario = 4000.0,
+        senha = 12345,
+        pl = 200.0
+    )
+    println("nome: ${guilherme.nome}")
+    println("cpf: ${guilherme.cpf}")
+    println("salário: ${guilherme.salario}")
+    println("Bonificação ${guilherme.bonificacao()}")
+
+    if (fran.autentica(123)) {
         println("autenticou com sucesso")
-    }else{
+    } else {
         println("falha na autenticação")
     }
 }
