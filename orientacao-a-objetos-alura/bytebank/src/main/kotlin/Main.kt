@@ -35,6 +35,12 @@ fun main() {
     println("Bonificação ${guilherme.bonificacao()}")
     println("Pl  ${guilherme.pl}")
 
+    val calculadora = CalculadoraBonificacao()
+    calculadora.registra(alex)
+    calculadora.registra(fran)
+    calculadora.registra(guilherme)
+    println("valor total de bonificação: ${calculadora.total}")
+
     if (fran.autentica(123)) {
         println("autenticou com sucesso")
     } else {
