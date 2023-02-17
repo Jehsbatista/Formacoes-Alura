@@ -33,6 +33,7 @@ fun main() {
     println("cpf: ${guilherme.cpf}")
     println("salário: ${guilherme.salario}")
     println("Bonificação ${guilherme.bonificacao()}")
+    println("Pl  ${guilherme.pl}")
 
     if (fran.autentica(123)) {
         println("autenticou com sucesso")
