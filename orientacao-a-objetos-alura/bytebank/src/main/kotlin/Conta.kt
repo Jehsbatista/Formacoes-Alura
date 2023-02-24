@@ -1,4 +1,4 @@
-class Conta(var titular: String, var numero: Int) {
+open class Conta(var titular: String, var numero: Int) {
     var saldo = 0.0
         private set  //apenas a classe consegue ajustar o valor de saldo
 
@@ -8,7 +8,7 @@ class Conta(var titular: String, var numero: Int) {
         }
     }
 
-    fun saca(valor: Double) {
+    open fun saca(valor: Double) {
         if (saldo >= valor) {
             saldo -= valor
         }
