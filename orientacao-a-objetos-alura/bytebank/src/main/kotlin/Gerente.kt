@@ -8,8 +8,7 @@ class Gerente(
     cpf = cpf,
     salario = salario,
     senha = 1234
-), Autenticavel {
-
+) {
     override fun bonificacao(): Double {
         return salario
     }
