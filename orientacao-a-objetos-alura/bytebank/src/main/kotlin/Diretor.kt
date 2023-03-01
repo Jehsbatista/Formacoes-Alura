@@ -4,7 +4,12 @@ class Diretor(
     salario: Double,
     senha: Int,
     val pl: Double
-) : FuncionarioAdmin(nome = nome, cpf = cpf, salario = salario, senha = 12345) {
+) : FuncionarioAdmin(
+    nome = nome,
+    cpf = cpf,
+    salario = salario,
+    senha = 12345
+), Autenticavel {
 
     override fun bonificacao(): Double {
         return salario + pl
