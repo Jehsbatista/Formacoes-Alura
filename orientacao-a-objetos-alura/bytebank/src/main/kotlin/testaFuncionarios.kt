@@ -46,7 +46,7 @@ fun testaFuncionarios() {
     calculadora.registra(maria)
     println("valor total de bonificação: ${calculadora.total}")
 
-    if (fran.autentica(123)) {
+    if (fran.autentica(1234)) {
         println("autenticou com sucesso")
     } else {
         println("falha na autenticação")
