@@ -1,4 +1,4 @@
-package model
+package br.com.alura.bytebank.model
 
 class SistemaInterno {
     fun entra(admin: Autenticavel, senha: Int) {

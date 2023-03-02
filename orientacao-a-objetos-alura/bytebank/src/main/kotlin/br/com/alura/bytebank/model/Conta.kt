@@ -1,4 +1,4 @@
-package model
+package br.com.alura.bytebank.model
 
 abstract class Conta(var titular: String, var numero: Int) {
     var saldo = 0.0

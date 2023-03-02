@@ -1,4 +1,0 @@
-package pacoteTeste
-
-class Cliente {
-}

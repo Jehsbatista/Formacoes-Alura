@@ -1,4 +1,4 @@
-package model
+package br.com.alura.bytebank.model
 
 class Analista(
     nome: String,

@@ -1,7 +1,7 @@
-package teste
+package br.com.alura.bytebank.teste
 
-import model.ContaCorrente
-import model.ContaPoupanca
+import br.com.alura.bytebank.model.ContaCorrente
+import br.com.alura.bytebank.model.ContaPoupanca
 
 fun testaComportamentosConta() {
     val contaAlex = ContaCorrente(titular = "Alex", numero = 1001)

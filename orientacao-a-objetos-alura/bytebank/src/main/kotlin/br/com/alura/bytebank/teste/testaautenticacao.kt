@@ -1,9 +1,9 @@
-package teste
+package br.com.alura.bytebank.teste
 
-import model.Cliente
-import model.Diretor
-import model.Gerente
-import model.SistemaInterno
+import br.com.alura.bytebank.model.Cliente
+import br.com.alura.bytebank.model.Diretor
+import br.com.alura.bytebank.model.Gerente
+import br.com.alura.bytebank.model.SistemaInterno
 
 fun testaAutenticacao() {
     val gerente = Gerente(

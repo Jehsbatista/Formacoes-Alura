@@ -1,4 +1,4 @@
-package teste
+package br.com.alura.bytebank.teste
 
 fun testacondicoes(saldo: Double) {
     when {
