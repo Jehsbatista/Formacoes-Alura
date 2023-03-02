@@ -1,7 +1,5 @@
 package model
 
-import model.FuncionarioAdmin
-
 class Gerente(
     nome: String,
     cpf: String,

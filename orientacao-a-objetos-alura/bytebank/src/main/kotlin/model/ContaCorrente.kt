@@ -1,7 +1,5 @@
 package model
 
-import model.Conta
-
 class ContaCorrente(
     titular: String, numero: Int
 ) : Conta(

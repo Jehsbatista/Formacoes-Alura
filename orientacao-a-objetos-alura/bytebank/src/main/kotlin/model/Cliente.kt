@@ -1,7 +1,5 @@
 package model
 
-import model.Autenticavel
-
 class Cliente(
     val nome: String,
     val cpf: String,
