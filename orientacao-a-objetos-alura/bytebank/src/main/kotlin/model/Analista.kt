@@ -1,3 +1,5 @@
+package model
+
 class Analista(
     nome: String,
     cpf: String,

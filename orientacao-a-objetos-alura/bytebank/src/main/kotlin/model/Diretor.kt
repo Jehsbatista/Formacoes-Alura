@@ -1,15 +1,18 @@
-class Gerente(
+package model
+
+class Diretor(
     nome: String,
     cpf: String,
     salario: Double,
-    senha: Int
+    senha: Int,
+    val pl: Double
 ) : FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
     salario = salario,
-    senha = 1234
+    senha = 12345
 ) {
     override fun bonificacao(): Double {
-        return salario
+        return salario + pl
     }
 }

@@ -1,3 +1,5 @@
+package teste
+
 fun testacondicoes(saldo: Double) {
     when {
         saldo > 0.0 -> {

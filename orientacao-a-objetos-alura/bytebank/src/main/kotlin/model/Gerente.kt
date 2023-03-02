@@ -1,16 +1,19 @@
-class Diretor(
+package model
+
+import model.FuncionarioAdmin
+
+class Gerente(
     nome: String,
     cpf: String,
     salario: Double,
-    senha: Int,
-    val pl: Double
+    senha: Int
 ) : FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
     salario = salario,
-    senha = 12345
+    senha = 1234
 ) {
     override fun bonificacao(): Double {
-        return salario + pl
+        return salario
     }
 }

@@ -1,3 +1,8 @@
+package teste
+
+import model.ContaCorrente
+import model.ContaPoupanca
+
 fun testaCopiaEReferencia() {
     val numeroX = 10
     var numeroY = numeroX
