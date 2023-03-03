@@ -1,7 +1,7 @@
-import br.com.alura.bytebank.model.Cliente
+import br.com.alura.bytebank.teste.testaContasDiferentes
 
 fun main() {
-    val cliente = Cliente(nome = "elias", cpf = "11111", senha = 1)
+    testaContasDiferentes()
 }
 
 
