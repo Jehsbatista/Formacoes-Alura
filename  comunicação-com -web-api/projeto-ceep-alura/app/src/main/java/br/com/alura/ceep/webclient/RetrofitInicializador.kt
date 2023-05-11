@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 
 class RetrofitInicializador {
 
-    val retrofit = Retrofit.Builder()
+    private val retrofit = Retrofit.Builder()
         .baseUrl("http://localhost:8080/")
         .build()
 }
