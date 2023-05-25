@@ -19,6 +19,7 @@ import br.com.alura.ceep.webclient.model.NotaResposta
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 class ListaNotasActivity : AppCompatActivity() {
@@ -43,19 +44,23 @@ class ListaNotasActivity : AppCompatActivity() {
                 buscaNotas()
             }
         }
-
-        lifecycleScope.launch(IO) {
-            val call: Call<List<NotaResposta>> = RetrofitInicializador().notaServive.buscarTodas()
-            val resposta: Response<List<NotaResposta>> = call.execute()
-            resposta.body()?.let { notasResposta ->
-                val notas = notasResposta.map {
-                    {
+        val call: Call<List<NotaResposta>> = RetrofitInicializador().notaServive.buscarTodas()
+        call.enqueue(object : Callback<List<NotaResposta>?> {
+            override fun onResponse(
+                call: Call<List<NotaResposta>?>,
+                resposta: Response<List<NotaResposta>?>
+            ) {
+                resposta.body()?.let { notasResposta ->
+                    val notas: List<Nota> = notasResposta.map {
                         it.nota
                     }
-                }
-                Log.i("ListaNotas", "onCreat: $notas")
+                    Log.i("ListaNotas", "onCreate: $notas")
+                }            }
+
+            override fun onFailure(call: Call<List<NotaResposta>?>, t: Throwable) {
+                    Log.e("ListaNotas", "failure",t)
             }
-        }
+        })
     }
 
     private fun configuraFab() {
