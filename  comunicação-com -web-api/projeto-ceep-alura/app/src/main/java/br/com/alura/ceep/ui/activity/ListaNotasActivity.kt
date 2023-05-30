@@ -12,15 +12,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import br.com.alura.ceep.database.AppDatabase
 import br.com.alura.ceep.databinding.ActivityListaNotasBinding
 import br.com.alura.ceep.extensions.vaiPara
-import br.com.alura.ceep.model.Nota
 import br.com.alura.ceep.ui.recyclerview.adapter.ListaNotasAdapter
-import br.com.alura.ceep.webclient.RetrofitInicializador
-import br.com.alura.ceep.webclient.model.NotaResposta
-import kotlinx.coroutines.Dispatchers.IO
+import br.com.alura.ceep.webclient.NotaWebClient
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ListaNotasActivity : AppCompatActivity() {
 
@@ -34,33 +28,22 @@ class ListaNotasActivity : AppCompatActivity() {
         AppDatabase.instancia(this).notaDao()
     }
 
+    private val webClient by lazy {
+        NotaWebClient()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         configuraFab()
         configuraRecyclerView()
         lifecycleScope.launch {
+            val notas = webClient.buscaTodas()
+            Log.i("ListaNotas", "onCreat: Retrofit coroutines $notas")
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 buscaNotas()
             }
         }
-        val call: Call<List<NotaResposta>> = RetrofitInicializador().notaServive.buscarTodas()
-        call.enqueue(object : Callback<List<NotaResposta>?> {
-            override fun onResponse(
-                call: Call<List<NotaResposta>?>,
-                resposta: Response<List<NotaResposta>?>
-            ) {
-                resposta.body()?.let { notasResposta ->
-                    val notas: List<Nota> = notasResposta.map {
-                        it.nota
-                    }
-                    Log.i("ListaNotas", "onCreate: $notas")
-                }            }
-
-            override fun onFailure(call: Call<List<NotaResposta>?>, t: Throwable) {
-                    Log.e("ListaNotas", "failure",t)
-            }
-        })
     }
 
     private fun configuraFab() {
