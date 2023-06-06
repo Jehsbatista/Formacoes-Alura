@@ -8,7 +8,7 @@ import br.com.alura.ceep.database.dao.NotaDao
 import br.com.alura.ceep.model.Nota
 
 @Database(
-    version = 1,
+    version = 2,
     entities = [Nota::class],
     exportSchema = true
 )
