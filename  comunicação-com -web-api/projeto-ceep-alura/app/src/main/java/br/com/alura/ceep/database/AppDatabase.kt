@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import br.com.alura.ceep.database.dao.NotaDao
+import br.com.alura.ceep.migrations.MIGRATION_1_2
 import br.com.alura.ceep.model.Nota
 
 @Database(
@@ -25,7 +26,8 @@ abstract class AppDatabase : RoomDatabase() {
                 context,
                 AppDatabase::class.java,
                 "ceep.db"
-            ).build()
+            ).addMigrations(MIGRATION_1_2)
+                .build()
         }
     }
 
