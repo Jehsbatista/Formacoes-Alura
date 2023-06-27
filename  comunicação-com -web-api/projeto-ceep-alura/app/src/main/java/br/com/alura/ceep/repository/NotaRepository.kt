@@ -27,5 +27,6 @@ class NotaRepository(private val dao: NotaDao, private val webClient: NotaWebCli
 
     suspend fun salva(nota: Nota) {
         dao.salva(nota)
+        webClient.salva(nota)
     }
 }
