@@ -14,7 +14,7 @@ class NotaRepository(private val dao: NotaDao, private val webClient: NotaWebCli
 
     private suspend fun atualizarTodas() {
         webClient.buscaTodas()?.let { notas ->
-            val notasSincronizadas = notas.map {notas ->
+            val notasSincronizadas = notas.map { notas ->
                 notas.copy(sincronizada = true)
             }
             dao.salva(notasSincronizadas)
@@ -26,19 +26,25 @@ class NotaRepository(private val dao: NotaDao, private val webClient: NotaWebCli
     }
 
     suspend fun remove(id: String) {
-        dao.remove(id)
-        webClient.remove(id)
+        dao.desativada(id)
+        if (webClient.remove(id)) {
+            dao.remove(id)
+        }
     }
 
     suspend fun salva(nota: Nota) {
         dao.salva(nota)
-        if (webClient.salva(nota)){
+        if (webClient.salva(nota)) {
             val notaSincronizada = nota.copy(sincronizada = true)
             dao.salva(notaSincronizada)
         }
     }
 
     suspend fun sincroniza(){
+        val notasDesativadas =dao.buscaDesativadas().first()
+        notasDesativadas.forEach{notasDesativadas ->
+            remove(notasDesativadas.id)
+        }
         val notasNaoSincronizadas = dao.buscaNaoSincronizadas().first()
         notasNaoSincronizadas.forEach{  notasNaoSincronizadas ->
             salva(notasNaoSincronizadas)
