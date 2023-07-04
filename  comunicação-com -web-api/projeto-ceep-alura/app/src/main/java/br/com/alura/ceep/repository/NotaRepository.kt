@@ -27,6 +27,7 @@ class NotaRepository(private val dao: NotaDao, private val webClient: NotaWebCli
 
     suspend fun remove(id: String) {
         dao.remove(id)
+        webClient.remove(id)
     }
 
     suspend fun salva(nota: Nota) {

@@ -36,4 +36,14 @@ class NotaWebClient {
         }
         return false
     }
+
+    suspend fun remove(id: String): Boolean {
+        try {
+            val resposta = notaService.remove(id)
+            return resposta.isSuccessful
+        } catch (e: Exception) {
+            Log.e(TAG, "Falha ao tentar remover", e)
+        }
+        return false
+    }
 }
