@@ -1,5 +1,9 @@
 fun main() {
-    val nomes: Collection<String> = setOf("Jéssica", "Roberto", "Carlos", "Ana", "Maria")
+    testaColecao()
+}
+
+fun testaColecao() {
+    val nomes: MutableCollection<String> = mutableListOf("Jéssica", "Roberto", "Carlos", "Ana", "Maria")
     println(nomes)
 
     for (nome in nomes) {
