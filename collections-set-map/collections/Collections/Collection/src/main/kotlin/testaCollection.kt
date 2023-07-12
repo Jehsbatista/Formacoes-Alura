@@ -1,7 +1,7 @@
 fun testaCopia() {
     val banco = BancoDeNomes()
     val nomesSalvos: Collection<String> = banco.nomes
-    banco.salva("alex")
+    //banco.salva("alex")
     println(nomesSalvos)
     println(BancoDeNomes().nomes)
 }

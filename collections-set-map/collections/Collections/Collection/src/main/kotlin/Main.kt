@@ -1,3 +1,7 @@
 fun main() {
-    testaCopia()
+    val assistiramCursoAndroid = listOf("Alex, Fran, João, Leo")
+    val assistiramCursoKotlin = listOf("Alex, Fran, Marcelo")
+    val assistiramAmbos = assistiramCursoKotlin + assistiramCursoAndroid
+
+    println(assistiramAmbos.distinct())
 }
