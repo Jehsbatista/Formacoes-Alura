@@ -8,4 +8,10 @@ fun main() {
     assistiramAmbos.add("Ana") //não repete o elemento
     assistiramAmbos.add("Ana")
     println(assistiramAmbos)
+
+
+//comportamentos do Set
+    println(assistiramCursoAndroid union assistiramCursoKotlin) //utilizando union para somar
+    println(assistiramCursoAndroid subtract assistiramCursoKotlin) //utilizando subtract para subtrair
+    println(assistiramCursoAndroid intersect  assistiramCursoKotlin) //utilizando técnica de intersecção
 }
