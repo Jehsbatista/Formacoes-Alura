@@ -11,7 +11,7 @@ fun main() {
 
 
 //comportamentos do Set
-    println(assistiramCursoAndroid union assistiramCursoKotlin) //utilizando union para somar
-    println(assistiramCursoAndroid subtract assistiramCursoKotlin) //utilizando subtract para subtrair
-    println(assistiramCursoAndroid intersect  assistiramCursoKotlin) //utilizando técnica de intersecção
+    println(assistiramCursoAndroid union assistiramCursoKotlin) //devolve um novo Set com a soma dos elementos dos conjuntos
+    println(assistiramCursoAndroid subtract assistiramCursoKotlin) //devolve um novo Set subtraindo os elementos contidos no segundo conjunto
+    println(assistiramCursoAndroid intersect  assistiramCursoKotlin) //devolve um novo Set apenas com os elementos contidos em ambos os conjuntos
 }
