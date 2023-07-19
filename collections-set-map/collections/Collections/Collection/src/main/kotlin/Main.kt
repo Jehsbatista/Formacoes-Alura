@@ -6,16 +6,22 @@ fun main() {
         3 to 200.0
     ) //utilizando infix "to" que faz o mesmo efeito do Pair. Não é recomendado para vários valores por perda de performance
 
-    println(pedidosB.getOrElse(5) {//caso não encontre a chave será retornado outro valor desejado
-        "não tem o pedido"
-    })
+    println(pedidosB + mapOf(Pair(4, 90.0))) //insere um novo elemento
+    println(pedidosB)
 
-    println(pedidosB.keys)//retorna todas as chaves
-    println(pedidosB.values)//retorna todos os valores
+    println(pedidosB.minus(4)) //subtrai um elemento
 
-    println( pedidosB.filter { (numero: Int, valor: Double?) -> //faz um filtro dos valores desejados
-        numero > 2 && valor > 20.0
-    })
+    println(pedidosB.putAll(setOf(4 to 10.0, 5 to 45.0, 6 to 70.0))) //insere uma nova lista a anterior
+    print(pedidosB)
+
+    pedidosB += setOf(4 to 10.0, 5 to 45.0, 6 to 70.0) //faz o mesmo comportamento que putAll
+    print(pedidosB)
+
+    pedidosB.keys.remove(1) //remove uma chave
+    println(pedidosB)
+
+    pedidosB.values.remove(50.0) //remove um valor
+    println(pedidosB)
 }
 
 private fun testaMap(pedidosB: MutableMap<Int, Double>) {
